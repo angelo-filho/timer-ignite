@@ -1,23 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  img {
-    width: 40px;
-  }
-
-  ul {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-
-    list-style: none;
+export const Wrapper = styled.div`
+  @media (min-width: 720px) {
+    padding: 80px;
   }
 `;
 
-export const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+export const Container = styled.div`
+  max-width: 1120px;
+  min-height: 744px;
+  margin: 0 auto;
 
-  padding: 16px;
+  background-color: ${(props) => props.theme.elementColor};
 `;
