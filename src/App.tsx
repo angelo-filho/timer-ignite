@@ -1,4 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./styles/GlobalStyle";
+import { darkTheme } from "./styles/theme";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +15,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <RouterProvider router={router} />
+      <GlobalStyle />
+    </ThemeProvider>
+  );
 }
 
 export default App;
