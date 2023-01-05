@@ -1,5 +1,6 @@
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { Home } from "./pages/Home";
 import { Root } from "./pages/Root";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import { darkTheme } from "./styles/theme";
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>home</div>,
+        element: <Home />,
       },
       {
         path: "/historic",

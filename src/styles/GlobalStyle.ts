@@ -9,11 +9,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    color: ${(props) => props.theme.textColor}
+    color: ${(props) => props.theme.colors.textColor}
   }
 
   body {
-    background-color: ${(props) => props.theme.bgColor};
+    background-color: ${(props) => props.theme.colors.bgColor};
   }
 
   button {

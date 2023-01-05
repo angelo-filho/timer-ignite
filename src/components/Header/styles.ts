@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -6,7 +5,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  padding: 48px 40px 0;
+  padding-top: 48px;
 
   img {
     width: 40px;
