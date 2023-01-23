@@ -15,6 +15,7 @@ export const darkTheme: DefaultTheme = {
     sideGreen: "#015F43",
     red: "#F03847",
     redDark: "#7A1921",
+    orange: "#FBA94C",
   },
   screens: {
     lg: "720px",

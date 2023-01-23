@@ -1,5 +1,6 @@
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { History } from "./pages/History";
 import { Home } from "./pages/Home";
 import { Root } from "./pages/Root";
 import { GlobalStyle } from "./styles/GlobalStyle";
@@ -15,8 +16,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/historic",
-        element: <div>Historic</div>,
+        path: "/history",
+        element: <History />,
       },
     ],
   },

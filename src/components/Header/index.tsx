@@ -17,7 +17,7 @@ export function Header() {
             </Link>
           </li>
           <li>
-            <Link to={"/historic"}>
+            <Link to={"/history"}>
               <Scroll size={"1.625rem"} />
             </Link>
           </li>

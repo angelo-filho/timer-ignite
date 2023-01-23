@@ -16,6 +16,7 @@ declare module "styled-components" {
       redDark: string;
       mainGreen: string;
       sideGreen: string;
+      orange: string;
     };
     screens: {
       lg: string;
