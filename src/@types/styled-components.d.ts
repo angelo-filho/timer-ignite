@@ -6,6 +6,7 @@ declare module "styled-components" {
       bgColor: string;
       elementColor: string;
       dividerColor: string;
+      timerNumberBgColor: string;
       placeholderColor: string;
       labelColor: string;
       textColor: string;

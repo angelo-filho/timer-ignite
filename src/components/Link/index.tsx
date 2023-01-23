@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
-import { NavLink } from "react-router-dom";
 
-import { LinkChildren } from "./styles";
+import { LinkChildren, NavLink } from "./styles";
 
 interface LinkProps {
   children: ReactNode;

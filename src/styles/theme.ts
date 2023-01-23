@@ -4,6 +4,7 @@ export const darkTheme: DefaultTheme = {
   colors: {
     bgColor: "#121214",
     elementColor: "#202024",
+    timerNumberBgColor: "#29292E",
     dividerColor: "#323238",
     placeholderColor: "#7C7C8A",
     labelColor: "#8D8D99",
