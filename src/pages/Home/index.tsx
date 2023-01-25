@@ -1,4 +1,8 @@
 import { Play } from "phosphor-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import z from "zod";
+
 import {
   HomeContainer,
   Separator,
@@ -9,18 +13,44 @@ import {
   MinutesAmountInput,
 } from "./styles";
 
-interface HomeProps {}
+const newCycleFormValidationSchema = z.object({
+  task: z.string().min(1, "Informe a tarefa"),
+  minutesAmount: z
+    .number()
+    .min(5, "O ciclo precisa ser de no mínimo 5 minutos")
+    .max(60, "O ciclo precisa ser de no máximo 60 minutos"),
+});
 
-export function Home({}: HomeProps) {
+type NewCycleFormData = z.infer<typeof newCycleFormValidationSchema>;
+
+export function Home() {
+  const { register, handleSubmit, watch, reset, formState } =
+    useForm<NewCycleFormData>({
+      resolver: zodResolver(newCycleFormValidationSchema),
+      defaultValues: {
+        task: "",
+        minutesAmount: 0,
+      },
+    });
+
+  const { errors } = formState;
+
+  const isSubmitDisabled = !watch("task");
+
+  function HandleCreateNewCycle(data: NewCycleFormData) {
+    reset();
+  }
+
   return (
     <HomeContainer>
-      <form>
+      <form onSubmit={handleSubmit(HandleCreateNewCycle)}>
         <FormContainer>
           <label htmlFor="task">Vou trabalhar em</label>
           <TaskInput
             id="task"
             list="task-suggestions"
             placeholder="Dê um nome para o seu projeto"
+            {...register("task")}
           />
 
           <datalist id="task-suggestions">
@@ -37,6 +67,7 @@ export function Home({}: HomeProps) {
             step={5}
             min={5}
             max={60}
+            {...register("minutesAmount", { valueAsNumber: true })}
           />
 
           <span>minutos.</span>
@@ -52,7 +83,7 @@ export function Home({}: HomeProps) {
           </div>
         </CountdownContainer>
 
-        <StartCountdownButton disabled type="submit">
+        <StartCountdownButton disabled={isSubmitDisabled} type="submit">
           <Play size={24} />
           Começar
         </StartCountdownButton>
